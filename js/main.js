@@ -42,14 +42,14 @@
             el.replaceChild(frag, child);
         });
     }
-    document.querySelectorAll('[data-fill] p').forEach(splitInto);
+    document.querySelectorAll('[data-fill] p, [data-fill] li').forEach(splitInto);
 
     sections.forEach(function (section) {
         var media = section.querySelector('.section-media');
 
         // group words into visual lines by vertical position, across paragraphs
         var lines = [];
-        section.querySelectorAll('[data-fill] p').forEach(function (p) {
+        section.querySelectorAll('[data-fill] p, [data-fill] li').forEach(function (p) {
             var lastTop = null;
             p.querySelectorAll('.word').forEach(function (w) {
                 var top = w.offsetTop;

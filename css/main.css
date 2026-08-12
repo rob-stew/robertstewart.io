@@ -222,6 +222,16 @@ a {
     margin-top: 1.5em;
 }
 
+/* numbers are written in the text so they animate with the char fill */
+.section-text ol {
+    list-style: none;
+    margin: 1.5em 0;
+}
+
+.section-text li + li {
+    margin-top: 0.75em;
+}
+
 /* per-character fill effect */
 .section-text .word {
     display: inline-block;
