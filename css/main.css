@@ -303,6 +303,15 @@ a {
         margin-top: 2vh;
     }
 
+    /* label sits inside .section-media on mobile, so bottom:0 would land on
+       it — let the chip flow right under the image instead */
+    .photo-credit {
+        position: static;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+    }
+
     /* no char-splitting on mobile, so underline the anchor itself */
     .section-text a {
         text-decoration: underline;
