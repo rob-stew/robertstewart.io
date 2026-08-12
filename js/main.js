@@ -17,23 +17,32 @@
     gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
     gsap.ticker.lagSmoothing(0);
 
-    // split each paragraph into word/char spans
-    document.querySelectorAll('[data-fill] p').forEach(function (p) {
-        var words = p.textContent.split(/\s+/).filter(Boolean);
-        p.textContent = '';
-        words.forEach(function (word, i) {
-            var w = document.createElement('span');
-            w.className = 'word';
-            for (var c = 0; c < word.length; c++) {
-                var ch = document.createElement('span');
-                ch.className = 'char';
-                ch.textContent = word[c];
-                w.appendChild(ch);
-            }
-            p.appendChild(w);
-            if (i < words.length - 1) p.appendChild(document.createTextNode(' '));
+    // split each paragraph into word/char spans, preserving inline tags (links)
+    function splitInto(el) {
+        Array.prototype.slice.call(el.childNodes).forEach(function (child) {
+            if (child.nodeType === 1) { splitInto(child); return; }
+            if (child.nodeType !== 3) return;
+            var frag = document.createDocumentFragment();
+            child.textContent.split(/(\s+)/).forEach(function (tok) {
+                if (!tok) return;
+                if (/\s/.test(tok)) {
+                    frag.appendChild(document.createTextNode(' '));
+                    return;
+                }
+                var w = document.createElement('span');
+                w.className = 'word';
+                for (var c = 0; c < tok.length; c++) {
+                    var ch = document.createElement('span');
+                    ch.className = 'char';
+                    ch.textContent = tok[c];
+                    w.appendChild(ch);
+                }
+                frag.appendChild(w);
+            });
+            el.replaceChild(frag, child);
         });
-    });
+    }
+    document.querySelectorAll('[data-fill] p').forEach(splitInto);
 
     sections.forEach(function (section) {
         var media = section.querySelector('.section-media');
