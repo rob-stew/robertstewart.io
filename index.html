@@ -12,63 +12,30 @@
       gtag('js', new Date());
       gtag('config', 'G-YRLJSLBTKS');
     </script>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f8f8f8;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        img {
-            max-height: 70%;
-            max-width: 80%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        a {
-            font-size: 18px;
-            color: #0073e6;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <img src="images/winter_landscape.jpeg" alt="a road and farm feild in the winter">
-    <br>
-    <p>returning soon...</p>
-    <a href="https://go.umd.edu/robstew">curriculum vitae</a>
-    <div class="footer">
-        &copy; <script>document.write(new Date().getFullYear())</script> Robert Stewart
-    </div>
-</body>
+    <nav class="nav nav--clear">
+        <a href="index.html">RS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="https://go.umd.edu/robstew" target="_blank" rel="noopener">CV</a>
+    </nav>
 
+    <main class="hero">
+        <a class="hero-item hero-label hero-link" id="hero-bluesky" href="https://bsky.app/profile/robertstewart.io" target="_blank" rel="noopener"><svg viewBox="0 0 600 530" aria-hidden="true"><path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49c26.262-54.316 97.782-155.54 164.28-205.46C512.26 8.009 590-19.862 590 68.825c0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.38-3.69-10.832-3.708-7.896-.017-2.936-1.193.516-3.707 7.896-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.449-163.25-81.433C20.15 217.613 9.997 86.535 9.997 68.825c0-88.687 77.742-60.816 125.72-24.795z"/></svg>[at]robertstewart.io</a>
+        <h1 class="hero-item hero-name" id="hero-robert">Robert</h1>
+        <span class="hero-item hero-label" id="hero-title">Assistant Professor<br>of Criminology and<br>Criminal Justice</span>
+        <span class="hero-item hero-label" id="hero-researcher">Researcher</span>
+        <h1 class="hero-item hero-name" id="hero-stewart">Stewart</h1>
+        <span class="hero-item hero-label" id="hero-minnesotan">Minnesotan</span>
+        <span class="hero-item hero-label" id="hero-email-umd">robstew[at]umd[dot]edu</span>
+    </main>
+
+    <div class="page-footer">
+        &copy; <script>document.write(new Date().getFullYear())</script> ROBERT STEWART
+    </div>
+
+</body>
 </html>
