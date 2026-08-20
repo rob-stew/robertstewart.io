@@ -1,0 +1,9 @@
+name = "rs-beacon"
+main = "src/index.js"
+compatibility_date = "2026-06-01"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rs-beacon"
+database_id = "8fc08a7b-b8a2-4c4b-993d-698d4c4516a9"
